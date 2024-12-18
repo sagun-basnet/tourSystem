@@ -5,8 +5,10 @@ import {
   Outlet,
 } from "react-router-dom";
 import Navbar from './components/global/Navbar';
-import Main from './components/home/Main';
 import './app.css'
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 
 const App = () => {
   const Layout = () => {
@@ -25,10 +27,18 @@ const App = () => {
       children: [
         {
           path: '/',
-          element: <Main />
+          element: <HomePage />
         }
       ]
-    }
+    },
+    {
+      path: '/login',
+      element: <LoginPage />
+    },
+    {
+      path: '/signup',
+      element: <SignupPage />
+    },
   ])
 
   return (

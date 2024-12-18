@@ -46,7 +46,7 @@ export default function Navbar() {
                             </NavLink>
                         </li> */}
                         <Link to="/login">
-                            <button className="login btn">Login</button>
+                            <button className="login btn p-2 px-4 rounded-md">Login</button>
                         </Link>
                     </ul>
                 </div>

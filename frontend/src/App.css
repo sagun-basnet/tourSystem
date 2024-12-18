@@ -134,8 +134,8 @@ h6 {
 .pool img {
   overflow: hidden;
   height: 24rem;
-  margin-left: -4rem;
-  width: 108%;
+  /* margin-left: -4rem; */
+  width: 100%;
 }
 
 /* =======================for recently section======================= */
