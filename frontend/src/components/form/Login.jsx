@@ -7,8 +7,11 @@ import MySvg from "../../image/svg/login.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import Validation from "./SigninValidation";
+import { AuthContext } from "../../context/authContext";
 
 const Login = () => {
+    const { login } = useContext(AuthContext);
+
     const [err, setErr] = useState(null);
     const navigate = useNavigate();
 
@@ -39,7 +42,7 @@ const Login = () => {
         } else {
             setErrors({});
             try {
-                // await login(values);
+                await login(values);
                 // await axios.post("http://localhost:8800/api/auth/login", values);
                 navigate('/');
             } catch (err) {

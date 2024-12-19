@@ -9,7 +9,7 @@ import { FaPhoneSquareAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 const Signup = () => {
     const [values, setValues] = useState({
@@ -18,6 +18,7 @@ const Signup = () => {
         phone: "",
         email: "",
         password: "",
+        role_id: 3
     })
 
     const navigate = useNavigate();
@@ -29,16 +30,17 @@ const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // axios.post('http://localhost:8800/api/auth/register', values).then(res => console.log(res)).then(err => console.log(err))
+        console.log(values);
+        axios.post('http://192.168.18.4:5050/api/register', values).then(res => console.log(res)).catch(err => console.log(err))
         navigate('/login');
     }
 
     return (
         <div className="w-full h-[100vh] grid place-items-center transition ease-in-out duration-700">
             <div className="h-[80%] w-[65%]  rounded-xl shadow-2xl flex">
-                <div className="h-full w-1/2 pl-14 pt-14 font-heading">
+                <div className="h-full w-1/2 pl-14 pt-14 outline-none font-heading">
                     <div className="flex flex-col justify-end">
-                        <h3 className="w-full text-4xl font-bold">Register</h3>
+                        <h3 className="w-full text-4xl outline-none font-bold">Register</h3>
                         <form
                             action=""
                             method="post"
@@ -53,7 +55,7 @@ const Signup = () => {
                                         name="name"
                                         id="name"
                                         placeholder="Enter Full Name"
-                                        className="font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
+                                        className="outline-none font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -64,7 +66,7 @@ const Signup = () => {
                                         name="address"
                                         id="address"
                                         placeholder="Enter Full Address"
-                                        className="font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
+                                        className="outline-none font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -75,7 +77,7 @@ const Signup = () => {
                                         name="phone"
                                         id="phone"
                                         placeholder="Enter your phone "
-                                        className="font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
+                                        className="outline-none font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -86,7 +88,7 @@ const Signup = () => {
                                         name="email"
                                         id="email"
                                         placeholder="Enter Email Address"
-                                        className="font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
+                                        className="outline-none font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -96,7 +98,7 @@ const Signup = () => {
                                         type="password"
                                         name="password"
                                         placeholder="Enter your Password"
-                                        className="font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
+                                        className="outline-none font-semibold border-0 !border-b-2 w-[80%] border-black border-botton px-8"
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -108,16 +110,16 @@ const Signup = () => {
                                     name="check"
                                     id=""
                                 />{" "}
-                                <span className="pl-2 font-semibold">
+                                <span className="pl-2 outline-none font-semibold">
                                     {" "}
                                     I agree your terms and conditions
                                 </span>
                             </div>
-                            <button className="bg-primary p-2 px-4 font-bold rounded-sm hover:bg-lightPrimary transition-colors duration-200 mt-4" type="submit">
+                            <button className="bg-primary p-2 px-4 outline-none font-bold rounded-sm hover:bg-lightPrimary transition-colors duration-200 mt-4" type="submit">
                                 Sign Up
                             </button>
                             <div className="flex gap-4 mt-6">
-                                <span className="font-semibold">or signup with</span>
+                                <span className="outline-none font-semibold">or signup with</span>
                                 <button className="p-1 rounded-md text-white bg-[#276bff]">
                                     <FaFacebookF />
                                 </button>
@@ -134,7 +136,7 @@ const Signup = () => {
                 <div className="h-full w-1/2 flex flex-col items-center">
                     <img className="h-[90%] w-full" src={MySvg} alt="MySvg" />
                     <NavLink to="/login">
-                        <p className="underline font-bold">Already have an account?</p>
+                        <p className="underline outline-none font-bold">Already have an account?</p>
                     </NavLink>
                 </div>
             </div>

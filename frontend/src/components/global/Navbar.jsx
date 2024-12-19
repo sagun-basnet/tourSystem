@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './style.css';
 import { NavLink, Link } from 'react-router-dom';
 import Logo from '../../image/img/logo4.png';
@@ -6,8 +6,12 @@ import { RxDashboard } from "react-icons/rx";
 import { AiOutlineDown } from "react-icons/ai";
 import { AiFillSetting, AiOutlineClose } from "react-icons/ai";
 import { AiOutlineLogout } from "react-icons/ai";
+import { AuthContext } from '../../context/authContext';
 
 export default function Navbar() {
+    const { currentUser } = useContext(AuthContext);
+    console.log(currentUser);
+
     return (
         <div>
             <nav id='navBar'>

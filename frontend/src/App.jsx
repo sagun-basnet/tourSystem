@@ -9,6 +9,9 @@ import './app.css'
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import AboutPage from './pages/AboutPage';
+import PackagePage from './pages/PackagePage';
+import ContactPage from './pages/ContactPage';
 
 const App = () => {
   const Layout = () => {
@@ -28,7 +31,19 @@ const App = () => {
         {
           path: '/',
           element: <HomePage />
-        }
+        },
+        {
+          path: '/about',
+          element: <AboutPage />
+        },
+        {
+          path: '/package',
+          element: <PackagePage />
+        },
+        {
+          path: '/contact',
+          element: <ContactPage />
+        },
       ]
     },
     {
